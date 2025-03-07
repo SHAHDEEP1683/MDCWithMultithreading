@@ -39,7 +39,7 @@ public class UserService {
 //        return CompletableFuture.completedFuture(mapper.toUserDto(updatedUser));
 //    }
 
-//    @Async("customExecutor")
+   @Async("customExecutor")
     @Transactional(rollbackFor = Exception.class)
     public CompletableFuture<UserDto> updateUSer(Long id, UserDto userDto) {
         log.info("Processing request for User ID: {} | Thread Name: {} | Request ID: {}",
