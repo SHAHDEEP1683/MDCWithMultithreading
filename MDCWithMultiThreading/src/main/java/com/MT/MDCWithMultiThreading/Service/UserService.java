@@ -27,17 +27,6 @@ public class UserService {
         return userRepository.findAll();
     }
 
-//    @Async("customExecutor")
-//    public CompletableFuture<UserDto> updateUSer(Long id, UserDto userDto){
-//       // String requestId = MDC.get("requestId");
-//        var exintingUser = userRepository.findById(id).orElseThrow();
-//        log.info("User : {}",exintingUser);
-//        var updatedUser = mapper.toUser(userDto, exintingUser);
-//        log.info("Updated User : {}",updatedUser);
-//        var saved =userRepository.save(updatedUser);
-//        log.info("Saved User : {}",saved);
-//        return CompletableFuture.completedFuture(mapper.toUserDto(updatedUser));
-//    }
 
    @Async("customExecutor")
     @Transactional(rollbackFor = Exception.class)
